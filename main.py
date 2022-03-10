@@ -15,6 +15,10 @@ cloud_image_tr = pygame.transform.scale(enemy_image, (50,25))
 
 bullet_sound = pygame.mixer.Sound("Assets/shoot.wav")
 
+pygame.mixer.music.load('Assets/shoot.wav')
+pygame.mixer.music.play()
+
+
 stars_image = pygame.image.load ("Assets/stars.jpg").convert()
 stars_image_tr = pygame.transform.scale(stars_image, (SCREEN_WIDTH,SCREEN_HEIGHT))
 
@@ -26,6 +30,7 @@ player_image.set_colorkey((255,255,255))
 clock = pygame.time.Clock()
 
 Ui_font = pygame.font.SysFont("arial", 25)
+
 
 # class Stars:
 # 	def __init__(self, x ,y):
@@ -147,6 +152,7 @@ while 1:
 		if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
 			player.createbullet()
 			bullet_sound.play()
+
 		# if event.type == pygame.KEYDOWN and event.key == pygame.K_0:
 		# # 	y += 2
 
